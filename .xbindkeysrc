@@ -1,0 +1,20 @@
+"firefox"
+    m:0x41 + c:25
+    Shift+Mod4 + w
+
+"thunar"
+    m:0x41 + c:40
+    Shift+Mod4 + d
+
+"st -e nvim"
+    Shift+Mod4 + s
+
+"amixer set Master 10%-"
+    KP_Subtract
+
+"amixer set Master 10%+"
+    KP_Add
+
+"zathura"
+    Shift+Mod4 + z
+

@@ -1,0 +1,5 @@
+[user]
+	email = bkallus@hamilton.edu
+	name = Ben Kallus
+[pull]
+	rebase = false
