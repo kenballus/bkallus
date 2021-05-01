@@ -15,5 +15,11 @@ while true; do                                  # Clock in dwm status bar
     sleep 1s
 done &
 
+WACOM_DISPLAY="DVI-I-1"
+
+for dev in $(xinput --list | grep Wacom | sed --regexp-extended 's/.*id=([0-9]+).*/\1/g'); do
+    xinput --map-to-output $dev $WACOM_DISPLAY
+done
+
 exec dbus-launch dwm                            # dbus-launch is necessary for flameshot
 

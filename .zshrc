@@ -16,7 +16,6 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 autoload -Uz take
 autoload -Uz zmv
 
-# Colors in ls and the greps
 alias ls='ls --color=auto --human-readable'
 alias grep='grep --color=auto'
 alias vim='nvim'
@@ -46,10 +45,13 @@ export LC_ALL="en_US.UTF-8"
 # for user-dirs.dirs
 export XDG_CONFIG_HOME="/home/bkallus/.config"
 
-# Colors and suggestions
+# Colors
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
+# Suggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Better history search
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
