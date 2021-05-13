@@ -4,7 +4,7 @@ xcompmgr -C &                                   # Enable transparency
 feh --bg-fill ~/.background.jpg                 # wm background
 clipmenud &                                     # clipboard manager
 
-export _JAVA_AWT_WM_NONREPARENTING="1"          # Fixes some java apps that don't show work with dwm
+export _JAVA_AWT_WM_NONREPARENTING="1"          # Fixes some java apps that don't work with dwm
 
 xmodmap -e 'clear Lock'                         # Ensures you're not stuck in caps lock mode
 xmodmap -e 'keycode 0x42=Escape'                # Remaps caps lock to escape
