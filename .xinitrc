@@ -11,15 +11,9 @@ xmodmap -e 'keycode 0x42=Escape'
 
 MOTD="$(python3 .generate_motd.py)"
 while true; do
-    xsetroot -name "$MOTD  $(date +'%A, %B %d, %l:%M:%S')"
+    xsetroot -name "$MOTD  $(date +'%A, %B %d, %l:%M:%S'); $(cat /sys/class/power_supply/BAT0/capacity)%"
     sleep 1s
 done &
-
-WACOM_DISPLAY="DVI-I-1"
-
-for dev in $(xinput --list | grep Wacom | sed --regexp-extended 's/.*id=([0-9]+).*/\1/g'); do
-    xinput --map-to-output $dev $WACOM_DISPLAY
-done
 
 exec dbus-launch dwm
 
