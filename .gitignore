@@ -2,8 +2,10 @@
 !.gitignore
 !.xinitrc
 !.zshrc
-!.config
 !.xbindkeysrc
 !.background.jpg
 !.gdbinit
 !.generate_motd.py
+!.config/user-dirs.dirs
+!.config/user-dirs.locale
+!.config/nvim/init.vim
