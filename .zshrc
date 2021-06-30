@@ -38,6 +38,7 @@ export DEVKITPRO="/opt/devkitpro"
 export DEVKITARM="/opt/devkitpro/devkitARM"
 export DEVKITA64="/opt/devkitpro/devkitA64"
 export DEVKITPPC="/opt/devkitpro/devkitPPC"
+export PATH="${DEVKITARM}/bin:${DEVKITPRO}/tools/bin:$PATH"
 
 # locale stuff
 export LC_ALL="en_US.UTF-8"
