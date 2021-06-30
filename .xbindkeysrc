@@ -6,10 +6,10 @@
     Shift+Mod4 + s
 
 "amixer set Master 10%-"
-    KP_Subtract
+    XF86AudioLowerVolume
 
 "amixer set Master 10%+"
-    KP_Add
+    XF86AudioRaiseVolume
 
 "zathura"
     Shift+Mod4 + z
