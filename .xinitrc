@@ -11,8 +11,8 @@ xmodmap -e 'keycode 0x42=Escape'
 
 MOTD="$(python3 .generate_motd.py)"
 while true; do
-    xsetroot -name "$MOTD  $(date +'%A, %B %d, %l:%M:%S'); $(cat /sys/class/power_supply/BAT0/capacity)%"
-    sleep 1s
+    xsetroot -name "$MOTD Volume@$(pamixer --get-volume)%; $(date +'%A, %B %d, %I:%M:%S'); $(cat /sys/class/power_supply/BAT0/status)@$(cat /sys/class/power_supply/BAT0/capacity)%"
+    sleep .1s
 done &
 
 exec dbus-launch dwm
