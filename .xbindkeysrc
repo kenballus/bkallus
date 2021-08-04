@@ -2,13 +2,13 @@
     m:0x41 + c:25
     Shift+Mod4 + w
 
-"st -e nvim"
+"subl -n"
     Shift+Mod4 + s
 
-"amixer set Master 10%-"
+"pamixer --decrease 5"
     XF86AudioLowerVolume
 
-"amixer set Master 10%+"
+"pamixer --increase 5"
     XF86AudioRaiseVolume
 
 "zathura"
@@ -17,3 +17,11 @@
 "flameshot gui"
     Shift+Mod4 + f
 
+"thunar"
+    Shift+Mod4 + d
+
+"xbacklight -10"
+    XF86MonBrightnessDown
+
+"xbacklight +10"
+    XF86MonBrightnessUp
