@@ -5,11 +5,11 @@
 "subl -n"
     Shift+Mod4 + s
 
-"amixer set Master 5%-"
-    KP_Subtract
+"pamixer --decrease 5"
+    XF86AudioLowerVolume
 
-"amixer set Master 5%+"
-    KP_Add
+"pamixer --increase 5"
+    XF86AudioRaiseVolume
 
 "zathura"
     Shift+Mod4 + z
@@ -17,3 +17,11 @@
 "flameshot gui"
     Shift+Mod4 + f
 
+"thunar"
+    Shift+Mod4 + d
+
+"xbacklight -10"
+    XF86MonBrightnessDown
+
+"xbacklight +10"
+    XF86MonBrightnessUp

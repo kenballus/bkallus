@@ -14,12 +14,6 @@ export MOZ_USE_XINPUT2=1
 xmodmap -e 'clear Lock'
 xmodmap -e 'keycode 0x42=Escape'
 
-# Update the root window title, which shows in the top left in dwm
-while true; do
-    xsetroot -name "$(date +'%A, %B %d, %l:%M:%S')"
-    sleep 1s
-done &
-
 # Rotate the Wacom inputs because the tablet is vertical
 for devnum in $(xinput --list | grep 'Wacom' | sed --regexp-extended 's/.*id=([0-9]+).*/\1/g'); do
     xinput --set-prop $devnum 'Wacom Rotation' 2
@@ -27,6 +21,11 @@ done
 
 # Coordinates of Dartmouth College
 redshift -l 43.70241:-72.289339 &
+
+while true; do
+    xsetroot -name "$MOTD Volume@$(pamixer --get-volume)%; $(date +'%A, %B %d, %I:%M:%S'); $(cat /sys/class/power_supply/BAT0/status)@$(cat /sys/class/power_supply/BAT0/capacity)%"
+    sleep .1s
+done &
 
 exec dbus-launch dwm
 
