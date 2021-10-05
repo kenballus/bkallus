@@ -2,13 +2,13 @@
     m:0x41 + c:25
     Shift+Mod4 + w
 
-"st -e nvim"
+"subl -n"
     Shift+Mod4 + s
 
-"amixer set Master 10%-"
+"amixer set Master 5%-"
     KP_Subtract
 
-"amixer set Master 10%+"
+"amixer set Master 5%+"
     KP_Add
 
 "zathura"
