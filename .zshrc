@@ -16,7 +16,7 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 autoload -Uz take
 autoload -Uz zmv
 
-alias ls='ls --color=auto --human-readable'
+alias ls='ls --color=auto --human-readable --classify'
 alias grep='grep --color=auto'
 alias vim='nvim'
 alias vi='nvim'
@@ -33,6 +33,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR="0"
 export SHELL="/usr/bin/zsh"
 export PAGER="/usr/bin/less"
 export BROWSER="/usr/bin/firefox"
+export LESSHISTFILE="/dev/null"
 
 export DEVKITPRO="/opt/devkitpro"
 export DEVKITARM="/opt/devkitpro/devkitARM"
@@ -51,3 +52,5 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # Suggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export PATH=$PATH:/home/bkallus/.local/bin
