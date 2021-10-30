@@ -16,8 +16,10 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 autoload -Uz take
 autoload -Uz zmv
 
-alias ls='ls --color=auto --human-readable --classify'
-alias grep='grep --color=auto'
+bindkey "\e[H"  beginning-of-line
+
+alias ls='ls --color=always --human-readable --classify'
+alias grep='egrep --color=auto'
 alias vim='nvim'
 alias vi='nvim'
 alias xterm='st'
@@ -25,6 +27,7 @@ alias diff='diff --color'
 alias mkdir='mkdir -p -v'
 alias more='less'
 alias dmesg='dmesg -HL'
+alias less='less -R'
 
 export GTK_THEME="Adwaita:dark"
 export EDITOR="/usr/bin/nvim"
@@ -54,3 +57,10 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PATH=$PATH:/home/bkallus/.local/bin
+
+# For launching GUI programs
+o() {
+    "$@" &
+    disown
+    exit
+}
