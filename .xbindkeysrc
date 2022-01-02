@@ -2,14 +2,14 @@
     m:0x41 + c:25
     Shift+Mod4 + w
 
-"subl -n"
+"subl --launch-or-new-window"
     Shift+Mod4 + s
 
 "pamixer --decrease 5"
-    XF86AudioLowerVolume
+    KP_Subtract
 
 "pamixer --increase 5"
-    XF86AudioRaiseVolume
+    KP_Add
 
 "zathura"
     Shift+Mod4 + z

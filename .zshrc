@@ -16,7 +16,7 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 autoload -Uz take
 autoload -Uz zmv
 
-alias ls='ls --color=always --human-readable'
+alias ls='ls --color=always --human-readable --classify -C'
 alias grep='egrep --color=auto'
 alias vim='nvim'
 alias vi='nvim'
@@ -26,6 +26,10 @@ alias mkdir='mkdir -p -v'
 alias more='less'
 alias dmesg='dmesg -HL'
 alias less='less -R'
+alias ip='ip -h -c=always'
+alias 'pacman -S'='pacman -S --needed'
+alias pgrep='pgrep --list-name'
+alias sudo='doas'
 
 export GTK_THEME="Adwaita:dark"
 export EDITOR="/usr/bin/nvim"
@@ -34,12 +38,13 @@ export QT_AUTO_SCREEN_SCALE_FACTOR="0"
 export SHELL="/usr/bin/zsh"
 export PAGER="/usr/bin/less"
 export BROWSER="/usr/bin/firefox"
+export LESSHISTFILE="/dev/null"
 
 export DEVKITPRO="/opt/devkitpro"
-export DEVKITARM="/opt/devkitpro/devkitARM"
-export DEVKITA64="/opt/devkitpro/devkitA64"
-export DEVKITPPC="/opt/devkitpro/devkitPPC"
-export PATH="${DEVKITARM}/bin:${DEVKITPRO}/tools/bin:$PATH"
+export DEVKITARM="${DEVKITPRO}/devkitARM"
+export DEVKITPPC="${DEVKITPRO}/devkitPPC"
+export DEVKITA64="${DEVKITPRO}/devkitA64"
+export PATH="${DEVKITARM}/bin:${DEVKITPRO}/tools/bin:${DEVKITPPC}/bin:$PATH"
 
 # locale stuff
 export LC_ALL="en_US.UTF-8"
