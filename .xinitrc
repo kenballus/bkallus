@@ -12,6 +12,7 @@ export MOZ_USE_XINPUT2=1
 # Make sure caps lock is off, then remap is to escape.
 xmodmap -e 'clear Lock'
 xmodmap -e 'keycode 0x42=Escape'
+xmodmap -e 'keysym Menu = Super_R'
 
 # Rotate the Wacom inputs because the tablet is vertical
 for devnum in $(xinput --list | grep 'Wacom' | sed --regexp-extended 's/.*id=([0-9]+).*/\1/g'); do

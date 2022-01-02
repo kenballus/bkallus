@@ -16,6 +16,8 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 autoload -Uz take
 autoload -Uz zmv
 
+bindkey "\e[H"  beginning-of-line
+
 alias ls='ls --color=always --human-readable --classify -C'
 alias grep='egrep --color=auto'
 alias vim='nvim'
@@ -52,13 +54,13 @@ export LC_ALL="en_US.UTF-8"
 # for user-dirs.dirs
 export XDG_CONFIG_HOME="/home/bkallus/.config"
 
-export PATH=$PATH:/home/bkallus/.local/bin
-
 # Colors
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Suggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export PATH=$PATH:/home/bkallus/.local/bin
 
 # For launching GUI programs
 o() {
