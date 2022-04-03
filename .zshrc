@@ -18,8 +18,8 @@ autoload -Uz zmv
 
 bindkey "\e[H"  beginning-of-line
 
-alias ls='ls --color=always --human-readable --classify -C'
-alias grep='egrep --color=auto'
+alias ls='ls --color=always --classify -C'
+alias grep='grep --color=auto'
 alias vim='nvim'
 alias vi='nvim'
 alias xterm='st'
@@ -32,6 +32,7 @@ alias ip='ip -h -c=always'
 alias 'pacman -S'='pacman -S --needed'
 alias pgrep='pgrep --list-name'
 alias sudo='doas'
+alias objdump='objdump --visualize-jumps=extended-color'
 
 export GTK_THEME="Adwaita:dark"
 export EDITOR="/usr/bin/nvim"
@@ -42,10 +43,11 @@ export PAGER="/usr/bin/less"
 export BROWSER="/usr/bin/firefox"
 export LESSHISTFILE="/dev/null"
 
+export MOZ_ENABLE_WAYLAND=1
+
 export DEVKITPRO="/opt/devkitpro"
 export DEVKITARM="${DEVKITPRO}/devkitARM"
 export DEVKITPPC="${DEVKITPRO}/devkitPPC"
-export DEVKITA64="${DEVKITPRO}/devkitA64"
 export PATH="${DEVKITA64}/bin:${DEVKITPRO}/tools/bin:${DEVKITPPC}/bin:$PATH"
 
 # locale stuff
@@ -61,6 +63,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PATH=$PATH:/home/bkallus/.local/bin
+
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 # For launching GUI programs
 o() {
