@@ -34,37 +34,31 @@ alias pgrep='pgrep --list-name'
 alias sudo='doas'
 alias objdump='objdump --visualize-jumps=extended-color'
 
+# Theming
 export GTK_THEME="Adwaita:dark"
 export EDITOR="/usr/bin/nvim"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_AUTO_SCREEN_SCALE_FACTOR="0"
+
+# Defaults
 export SHELL="/usr/bin/zsh"
 export PAGER="/usr/bin/less"
 export BROWSER="/usr/bin/firefox"
 export LESSHISTFILE="/dev/null"
 
+# Wayland
 export MOZ_ENABLE_WAYLAND=1
+export QT_QPA_PLATFORM=wayland
 
-export DEVKITPRO="/opt/devkitpro"
-export DEVKITARM="${DEVKITPRO}/devkitARM"
-export DEVKITPPC="${DEVKITPRO}/devkitPPC"
-export PATH="${DEVKITA64}/bin:${DEVKITPRO}/tools/bin:${DEVKITPPC}/bin:$PATH"
-
-# locale stuff
+# Misc
 export LC_ALL="en_US.UTF-8"
-
-# for user-dirs.dirs
 export XDG_CONFIG_HOME="/home/bkallus/.config"
-
-# Colors
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Suggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 export PATH=$PATH:/home/bkallus/.local/bin
-
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+
+# Zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # For launching GUI programs
 o() {
