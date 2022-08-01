@@ -47,8 +47,9 @@ export BROWSER="/usr/bin/firefox"
 export LESSHISTFILE="/dev/null"
 
 # Wayland
-export MOZ_ENABLE_WAYLAND=1
-export QT_QPA_PLATFORM=wayland
+export MOZ_ENABLE_WAYLAND="1"
+export QT_QPA_PLATFORM="wayland"
+export _JAVA_AWT_WM_NONREPARENTING="1"
 
 # Misc
 export LC_ALL="en_US.UTF-8"
