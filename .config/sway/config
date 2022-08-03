@@ -81,7 +81,15 @@ bindsym $mod+f floating toggle
 bar {
     position top
 
-    status_command 'while true; do echo "$(cat /sys/class/power_supply/BAT0/status)@$(cat /sys/class/power_supply/BAT0/capacity)% | Volume@$([[ "$(pactl get-sink-mute $(pactl get-default-sink))" == "Mute: yes" ]] && echo 0 || pamixer --get-volume)% | $(date +"%A, %B %d, %I:%M:%S")"; sleep .1; done'
+    status_command 'while true; do \
+        sleep .1; \
+        BAT_CAPACITY="$(cat /sys/class/power_supply/BAT0/capacity)"; \
+        BAT_EMOJI="$([[ BAT_CAPACITY -lt 20 ]] && echo 🪫 || echo 🔋)"; \
+        BAT_STATUS="$(cat /sys/class/power_supply/BAT0/status)"; \
+        VOLUME_LEVEL="$(pamixer --get-volume)"; \
+        DATE_STRING="$(date +"%A, %B %d, %I:%M:%S")"; \
+        echo "$BAT_CAPACITY% ($BAT_STATUS) $BAT_EMOJI | Volume: $VOLUME_LEVEL | $DATE_STRING"; \
+    done'
 
     colors {
         statusline #ffffff
