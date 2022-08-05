@@ -91,7 +91,7 @@ bar {
         VOL_EMOJI="$( { [[ "$MUTE_STATUS" == "Mute: yes" ]] && echo "🔇"; } || { [[ "$VOL_LEVEL" -gt "66" ]] && echo "🔊"; } || { [[ "$VOL_LEVEL" -gt "33" ]] && echo "🔉"; } || { echo "🔈"; } )"; \
         DATE_STRING="$(date +"%A, %B %d, %I:%M:%S")"; \
         sleep .1; \
-        echo "$BAT_CAPACITY% $BAT_CHARGE_EMOJI$BAT_EMOJI | $VOL_EMOJI: $VOL_LEVEL% | $DATE_STRING"; \
+        echo "$BAT_CAPACITY% $BAT_CHARGE_EMOJI$BAT_EMOJI | $VOL_LEVEL% $VOL_EMOJI | $DATE_STRING"; \
 done'
 
     colors {
