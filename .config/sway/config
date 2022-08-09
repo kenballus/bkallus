@@ -29,10 +29,10 @@ bindsym $mod+Shift+Return exec $term
 bindsym $mod+Shift+s      exec $editor
 bindsym $mod+Shift+w      exec $browser
 
-bindsym XF86AudioRaiseVolume exec "pamixer --increase 5"
-bindsym XF86AudioLowerVolume exec "pamixer --decrease 5"
-bindsym XF86AudioMute        exec "pactl set-sink-mute $(pactl get-default-sink) toggle"
-bindsym XF86AudioMicMute     exec "pactl set-source-mute $(pactl get-default-source) toggle"
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+bindsym XF86AudioMute        exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+bindsym XF86AudioMicMute     exec "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
 
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+e reload
@@ -82,7 +82,7 @@ bar {
         BAT_STATUS="$(cat /sys/class/power_supply/BAT0/status)"; \
         BAT_CHARGE_EMOJI="$([[ "$BAT_STATUS" != "Discharging" ]] && echo "⚡")"; \
         VOL_LEVEL="$(pamixer --get-volume)"; \
-        MUTE_STATUS="$(pactl get-sink-mute "$(pactl get-default-sink)")"; \
+        MUTE_STATUS="$(pactl get-sink-mute @DEFAULT_SINK@)"; \
         VOL_EMOJI="$( { [[ "$MUTE_STATUS" == "Mute: yes" ]] && echo "🔇"; } || { [[ "$VOL_LEVEL" -gt "66" ]] && echo "🔊"; } || { [[ "$VOL_LEVEL" -gt "33" ]] && echo "🔉"; } || { echo "🔈"; } )"; \
         DATE_STRING="$(date +"%A, %B %d, %l:%M:%S")"; \
         sleep .1; \
