@@ -21,28 +21,24 @@ exec swayidle -w \
 
 input "type:keyboard" {
     xkb_options caps:escape
+    xkb_options altwin:menu_win
     repeat_delay 300
     repeat_rate 75
 }
 
 bindsym $mod+Shift+Return exec $term
+bindsym $mod+Shift+s      exec $editor
+bindsym $mod+Shift+w      exec $browser
 
-bindsym $mod+Shift+s exec $editor
-
-bindsym $mod+Shift+w exec $browser
-
-bindsym $mod+Shift+q kill
-
-bindsym $mod+p exec $menu
-
-# Useful to me only on my laptop
 bindsym XF86AudioRaiseVolume exec "pamixer --increase 5"
 bindsym XF86AudioLowerVolume exec "pamixer --decrease 5"
-bindsym XF86AudioMute exec "pactl set-sink-mute $(pactl get-default-sink) toggle"
-bindsym XF86AudioMicMute exec "pactl set-source-mute $(pactl get-default-source) toggle"
+bindsym XF86AudioMute        exec "pactl set-sink-mute $(pactl get-default-sink) toggle"
+bindsym XF86AudioMicMute     exec "pactl set-source-mute $(pactl get-default-source) toggle"
 
+bindsym $mod+Shift+q kill
 bindsym $mod+Shift+e reload
 bindsym $mod+Shift+c exec swaymsg exit
+bindsym $mod+p       exec $menu
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
