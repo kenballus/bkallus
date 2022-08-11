@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+import sys
+import os
+
+TAR_SUFFIXES = (".tar.bz2", ".tar.xz", ".tar.gz")
+
+if len(sys.argv) != 2:
+    print(f"USAGE: {sys.argv[0]} <file>", file=sys.stderr)
+    sys.exit(1)
+
+filename = sys.argv[1]
+
+command = "echo Unrecognized file type!"
+if any(filename.endswith(suffix) for suffix in TAR_SUFFIXES):
+    command = f"tar xvf {filename}"
+elif filename.endswith(".zip"):
+    command = f"unzip {filename}"
+elif filename.endswith(".7z"):
+    command = f"7z x {filename}"
+elif filename.endswith(".rar"):
+    command = f"unrar x {filename}"
+elif filename.endswith(".xz"):
+    command = f"unxz {filename}"
+
+os.system(command)
