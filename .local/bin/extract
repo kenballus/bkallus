@@ -21,5 +21,7 @@ elif filename.endswith(".rar"):
     command = f"unrar x {filename}"
 elif filename.endswith(".xz"):
     command = f"unxz {filename}"
+elif filename.endswith(".gz"):
+    command = f"gunzip {filename}"
 
 os.system(command)

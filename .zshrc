@@ -4,7 +4,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/bkallus/.zshrc'
+zstyle :compinstall filename "/home/$(whoami)/.zshrc"
 
 autoload -Uz compinit
 compinit
@@ -51,8 +51,8 @@ export _JAVA_AWT_WM_NONREPARENTING="1"
 
 # Misc
 export LC_ALL="en_US.UTF-8"
-export XDG_CONFIG_HOME="/home/bkallus/.config"
-export PATH=$PATH:/home/bkallus/.local/bin
+export XDG_CONFIG_HOME="/home/$(whoami)/.config"
+export PATH="$PATH:/home/$(whoami)/.local/bin"
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 # Zsh
