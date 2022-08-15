@@ -31,6 +31,7 @@ alias pgrep='pgrep --list-name'
 alias sudo='doas'
 alias objdump='objdump --visualize-jumps=extended-color'
 alias ssh='TERM=xterm-256color ssh'
+alias nmcli='nmcli --pretty'
 
 # Theming
 export GTK_THEME="Adwaita:dark"
