@@ -54,7 +54,6 @@ export _JAVA_AWT_WM_NONREPARENTING="1"
 export LC_ALL="en_US.UTF-8"
 export XDG_CONFIG_HOME="/home/$(whoami)/.config"
 export PATH="$PATH:/home/$(whoami)/.local/bin"
-export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 # Zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
