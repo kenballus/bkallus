@@ -67,3 +67,8 @@ o() {
     disown
     exit
 }
+
+# For activating python venvs
+activate() {
+    source "$@/bin/activate"
+}
