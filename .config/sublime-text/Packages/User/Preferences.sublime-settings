@@ -4,7 +4,6 @@
 	"margin": 0,
 	"auto_match_enabled": false,
 	"draw_white_space": ["all"],
-	"trim_trailing_white_space_on_save": "all",
 	"auto_complete_delay": 0,
 	"auto_complete_commit_on_tab": true,
 	"auto_complete_cycle": true,
@@ -17,4 +16,6 @@
 	"hide_new_tab_button": true,
 	"hide_tab_scrolling_buttons": true,
 	"enable_tab_scrolling": false,
+	"font_size": 11,
+	"color_scheme": "Mariana.sublime-color-scheme",
 }
