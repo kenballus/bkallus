@@ -11,3 +11,4 @@
 !.config/nvim/init.vim
 !.config/sway/config
 !.config/sublime-text/Packages/User/Preferences.sublime-settings
+!.dhexrc
