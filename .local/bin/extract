@@ -1,27 +1,32 @@
 #!/usr/bin/env python3
 import sys
 import os
+import pathlib
+from typing import Set
 
-TAR_SUFFIXES = (".tar.bz2", ".tar.xz", ".tar.gz")
+TAR_EXTENSIONS: Set[str] = {".tar.bz2", ".tar.xz", ".tar.gz", ".tgz"}
 
 if len(sys.argv) != 2:
     print(f"USAGE: {sys.argv[0]} <file>", file=sys.stderr)
     sys.exit(1)
 
-filename = sys.argv[1]
+filename: pathlib.PosixPath = pathlib.PosixPath(sys.argv[1])
+if not filename.is_file():
+    print(f"Error: No such file {filename}")
 
-command = "echo Unrecognized file type!"
-if any(filename.endswith(suffix) for suffix in TAR_SUFFIXES):
+command: str = "echo Unrecognized file type!"
+extension: str = "".join(filename.suffixes)
+if extension in TAR_EXTENSIONS:
     command = f"tar xvf {filename}"
-elif filename.endswith(".zip"):
+elif extension == ".zip":
     command = f"unzip {filename}"
-elif filename.endswith(".7z"):
+elif extension == ".7z":
     command = f"7z x {filename}"
-elif filename.endswith(".rar"):
+elif extension == ".rar":
     command = f"unrar x {filename}"
-elif filename.endswith(".xz"):
+elif extension == ".xz":
     command = f"unxz {filename}"
-elif filename.endswith(".gz"):
+elif extension == ".gz":
     command = f"gunzip {filename}"
 
 os.system(command)
