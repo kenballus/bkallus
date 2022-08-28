@@ -12,3 +12,4 @@
 !.config/sway/config
 !.config/sublime-text/Packages/User/Preferences.sublime-settings
 !.local/bin/extract
+!.dhexrc
