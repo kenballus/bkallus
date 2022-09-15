@@ -17,16 +17,16 @@ if not filename.is_file():
 command: str = "echo Unrecognized file type!"
 extension: str = "".join(filename.suffixes)
 if extension in TAR_EXTENSIONS:
-    command = f"tar xvf {filename}"
+    command = f"tar xvf \"{filename}\""
 elif extension == ".zip":
-    command = f"unzip {filename}"
+    command = f"unzip \"{filename}\""
 elif extension == ".7z":
-    command = f"7z x {filename}"
+    command = f"7z x \"{filename}\""
 elif extension == ".rar":
-    command = f"unrar x {filename}"
+    command = f"unrar x \"{filename}\""
 elif extension == ".xz":
-    command = f"unxz {filename}"
+    command = f"unxz \"{filename}\""
 elif extension == ".gz":
-    command = f"gunzip {filename}"
+    command = f"gunzip \"{filename}\""
 
 os.system(command)
