@@ -51,6 +51,7 @@ export QT_QPA_PLATFORM="wayland"
 export _JAVA_AWT_WM_NONREPARENTING="1"
 export SDL_VIDEODRIVER="wayland"
 export CLUTTER_BACKEND="wayland"
+export XDG_CURRENT_DESKTOP="sway"
 
 # Misc
 export LC_ALL="en_US.UTF-8"
