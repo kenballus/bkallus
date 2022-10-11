@@ -56,10 +56,9 @@ export GDK_BACKEND="wayland"
 
 # Misc
 export LC_ALL="en_US.UTF-8"
-export XDG_CONFIG_HOME="/home/$(whoami)/.config"
+export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$PATH:$HOME/.local/bin"
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
-export XDG_CONFIG_HOME="$HOME/config"
 
 # Zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
