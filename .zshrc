@@ -18,13 +18,9 @@ autoload -Uz zmv
 
 bindkey "\e[H"  beginning-of-line
 
-alias ls='ls --color=always --classify -C'
 alias grep='grep --color=auto'
 alias vim='nvim'
-alias vi='nvim'
-alias diff='diff --color'
-alias mkdir='mkdir -p -v'
-alias more='less'
+alias vi='nvim' alias diff='diff --color' alias mkdir='mkdir -p -v' alias more='less'
 alias less='less -R'
 alias ip='ip -h -c=always'
 alias pgrep='pgrep --list-name'
@@ -32,6 +28,10 @@ alias sudo='doas'
 alias objdump='objdump --visualize-jumps=extended-color'
 alias ssh='TERM=xterm-256color ssh'
 alias nmcli='nmcli --pretty'
+alias rg='rg --no-ignore'
+alias rga='rga --no-ignore'
+alias ls='ls --color=always --classify -C'
+alias l='ls'
 
 # Theming
 export GTK_THEME="Adwaita:dark"
@@ -57,7 +57,12 @@ export GDK_BACKEND="wayland"
 # Misc
 export LC_ALL="en_US.UTF-8"
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="$PATH:$HOME/.local/bin"
+
+case ":$PATH:" in
+  *:$HOME/.local/bin:*);;
+  *) export PATH="$PATH:$HOME/.local/bin";;
+esac
+
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 
 # Zsh
