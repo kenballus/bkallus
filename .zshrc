@@ -20,7 +20,10 @@ bindkey "\e[H"  beginning-of-line
 
 alias grep='grep --color=auto'
 alias vim='nvim'
-alias vi='nvim' alias diff='diff --color' alias mkdir='mkdir -p -v' alias more='less'
+alias vi='nvim'
+alias diff='diff --color'
+alias mkdir='mkdir -p -v'
+alias more='less'
 alias less='less -R'
 alias ip='ip -h -c=always'
 alias pgrep='pgrep --list-name'
