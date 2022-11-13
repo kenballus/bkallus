@@ -14,6 +14,8 @@ output * bg ~/.background.jpg fill
 
 default_border none
 
+exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
