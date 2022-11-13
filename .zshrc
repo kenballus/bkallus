@@ -16,9 +16,9 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 autoload -Uz take
 autoload -Uz zmv
 
-bindkey "\e[H"   beginning-of-line
-bindkey "\e[F"   end-of-line
-bindkey  "\e[3~" delete-char
+bindkey "\e[H"  beginning-of-line
+bindkey "\e[F"  end-of-line
+bindkey "\e[3~" delete-char
 
 alias grep='grep --color=auto'
 alias vim='nvim'
