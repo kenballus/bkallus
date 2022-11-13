@@ -16,7 +16,9 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 autoload -Uz take
 autoload -Uz zmv
 
-bindkey "\e[H"  beginning-of-line
+bindkey "\e[H"   beginning-of-line
+bindkey "\e[F"   end-of-line
+bindkey  "\e[3~" delete-char
 
 alias grep='grep --color=auto'
 alias vim='nvim'
@@ -52,7 +54,7 @@ export LESSHISTFILE="/dev/null"
 export MOZ_ENABLE_WAYLAND="1"
 export QT_QPA_PLATFORM="wayland"
 export _JAVA_AWT_WM_NONREPARENTING="1"
-export SDL_VIDEODRIVER="wayland"
+# export SDL_VIDEODRIVER="wayland" # Never works
 export CLUTTER_BACKEND="wayland"
 export XDG_CURRENT_DESKTOP="sway"
 export GDK_BACKEND="wayland"
