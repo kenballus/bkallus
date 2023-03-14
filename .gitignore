@@ -1,4 +1,3 @@
-*
 !.gitignore
 !.xinitrc
 !.zshrc
@@ -13,3 +12,4 @@
 !.config/sublime-text/Packages/User/Preferences.sublime-settings
 !.local/bin/extract
 !.dhexrc
+*

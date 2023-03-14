@@ -18,4 +18,9 @@
 	"enable_tab_scrolling": false,
 	"font_size": 11,
 	"color_scheme": "Mariana.sublime-color-scheme",
+	"translate_tabs_to_spaces": true,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
 }

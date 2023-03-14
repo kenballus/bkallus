@@ -14,7 +14,7 @@ output * bg ~/.background.jpg fill
 
 default_border none
 
-exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
@@ -81,30 +81,12 @@ bindsym $mod+Shift+0 move container to workspace number 10
 bindsym $mod+Shift+minus move container to workspace number 11
 bindsym $mod+Shift+equal move container to workspace number 12
 
+floating_modifier $mod
 bindsym $mod+f floating toggle
 bindsym $mod+Shift+f fullscreen
 
 bar {
-    position top
-
-    status_command 'while true; do \
-        BAT_CAPACITY="$(cat /sys/class/power_supply/BAT0/capacity)"; \
-        BAT_EMOJI="$([[ BAT_CAPACITY -lt 20 ]] && echo 🪫 || echo 🔋)"; \
-        BAT_STATUS="$(cat /sys/class/power_supply/BAT0/status)"; \
-        BAT_CHARGE_EMOJI="$([[ "$BAT_STATUS" != "Discharging" ]] && echo "⚡")"; \
-        VOL_LEVEL="$(pamixer --get-volume)"; \
-        MUTE_STATUS="$(pactl get-sink-mute @DEFAULT_SINK@)"; \
-        VOL_EMOJI="$( { [[ "$MUTE_STATUS" == "Mute: yes" ]] && echo "🔇"; } || { [[ "$VOL_LEVEL" -gt "66" ]] && echo "🔊"; } || { [[ "$VOL_LEVEL" -gt "33" ]] && echo "🔉"; } || { echo "🔈"; } )"; \
-        DATE_STRING="$(date +"%A, %B %d, %l:%M:%S")"; \
-        sleep .1; \
-        echo "$BAT_CAPACITY% $BAT_CHARGE_EMOJI$BAT_EMOJI | $VOL_LEVEL% $VOL_EMOJI | $DATE_STRING"; \
-done'
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #323232FF #323232FF #5c5c5c
-    }
+     swaybar_command waybar
 }
 
 include @sysconfdir@/sway/config.d/*
