@@ -4,7 +4,7 @@ import os
 import pathlib
 from typing import Set
 
-TAR_EXTENSIONS: Set[str] = {".tar.bz2", ".tar.xz", ".tar.gz", ".tgz"}
+TAR_EXTENSIONS: Set[str] = {".tar.bz2", ".tar.xz", ".tar.gz", ".tgz", ".taz"}
 
 if len(sys.argv) != 2:
     print(f"USAGE: {sys.argv[0]} <file>", file=sys.stderr)
