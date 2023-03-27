@@ -6,7 +6,7 @@ set $up k
 set $right l
 
 set $term    alacritty
-set $menu    bemenu-run --line-height 23
+set $menu    bemenu-run --line-height 24
 set $browser firefox
 set $editor  subl -n
 
