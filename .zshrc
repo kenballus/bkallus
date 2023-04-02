@@ -41,14 +41,14 @@ alias la='ls --all'
 
 # Theming
 export GTK_THEME="Adwaita:dark"
-export EDITOR="/usr/bin/nvim"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_AUTO_SCREEN_SCALE_FACTOR="0"
 
 # Defaults
-export SHELL="/usr/bin/zsh"
-export PAGER="/usr/bin/less"
-export BROWSER="/usr/bin/firefox"
+export SHELL="zsh"
+export EDITOR="nvim"
+export PAGER="less"
+export BROWSER="firefox"
 export LESSHISTFILE="/dev/null"
 
 # Wayland
