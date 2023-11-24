@@ -39,12 +39,12 @@ alias sudo='doas'
 # Theming
 export GTK_THEME="Adwaita:dark"
 export QT_AUTO_SCREEN_SCALE_FACTOR="0"
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Defaults
-export EDITOR="nvim"
 export SHELL="zsh"
+export EDITOR="nvim"
 export PAGER="less"
-export BROWSER="librewolf"
 export LESSHISTFILE="/dev/null"
 
 # Wayland
