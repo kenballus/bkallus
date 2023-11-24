@@ -3,16 +3,30 @@
     "spacing": 4,
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "clock", "tray"],
-    "tray": {
-        "spacing": 10
+    "modules-right": ["battery", "pulseaudio", "clock", "tray"],
+    "battery": {
+        "bat": "BAT0",
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+    },
+    "pulseaudio": {
+        "on-click": "pavucontrol",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
     },
     "clock": {
         "interval": 30,
         "format": "{:%A, %b %d, %I:%M %p}",
     },
-    "pulseaudio": {
-        "format": "{volume}%",
-        "on-click": "pavucontrol"
+    "tray": {
+        "spacing": 10
     }
 }
