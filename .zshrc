@@ -4,7 +4,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename "/home/$(whoami)/.zshrc"
+zstyle :compinstall filename "/home/${USER}/.zshrc"
 
 autoload -Uz compinit
 compinit
