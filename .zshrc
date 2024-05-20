@@ -20,12 +20,12 @@ bindkey "\e[3~" delete-char
 alias grep='grep --color' # Compatible with busybox, but doesn't do anything
 alias ls='ls -F -C --color'
 alias diff='diff --color' # Not compatible with busybox
-alias mkdir='mkdir -p'
+alias mkdir='mkdir -p -v'
 alias rmdir='rmdir -p --ignore-fail-on-non-empty'
-alias ip='ip --color=always' # Not compatible with busybox
+alias ip='ip -h -c=always' # Not compatible with busybox
 alias pgrep='pgrep -l'
 
-alias objdump='objdump --visualize-jumps=extended-color'
+alias objdump='objdump --visualize-jumps=extended-color --disassembler-color=extended'
 alias ssh='TERM=xterm-256color ssh'
 alias nmcli='nmcli --pretty'
 alias rg='rg --no-ignore'
@@ -33,7 +33,7 @@ alias less='less -R'
 
 alias vim='nvim'
 alias vi='nvim'
-alias more='less'
+alias more='less -R'
 alias sudo='doas'
 
 # Theming
@@ -46,6 +46,7 @@ export SHELL="zsh"
 export EDITOR="nvim"
 export PAGER="less"
 export LESSHISTFILE="/dev/null"
+export BROWSER="librewolf"
 
 # Wayland
 export MOZ_ENABLE_WAYLAND="1"
@@ -67,6 +68,9 @@ esac
 # Zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Misc
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 
 # For execing without leaving behind a terminal window
 o() {
