@@ -14,52 +14,11 @@ output "Unknown Unknown Unknown" {
     scale 1.5
 }
 
-<<<<<<< HEAD
-=======
 # Left spacenut 30" display
->>>>>>> 21d018a (Make sway config same across spacenut and flax. switch from subl to nvim.)
 output "Apple Computer Inc Cinema HD CY8340Q0XMP" {
     mode 2560x1600@59.860Hz
     pos 0 0
 }
-<<<<<<< HEAD
-
-output "Apple Computer Inc Cinema HD CY7040X1UG1" {
-    mode 2560x1600@59.860Hz
-    pos 2560 0
-}
-
-output "Apple Computer Inc Cinema HD CY915042XMP" {
-    mode 2560x1600@59.860Hz
-    pos 5120 0
-}
-
-output "CYPRESS SEMICONDUCTOR CORPORATION CP-1261HS 0x00000001" {
-    mode 1920x1200@59.950Hz
-    pos 7680 0
-}
-
-output "Apple Computer Inc Apple Cinema  0x02000306" {
-    mode 1920x1200@59.649Hz
-    pos 9600 0
-}
-
-output "Apple Computer Inc Apple Cinema  0x02000301" {
-    mode 1920x1200@59.649Hz
-    pos 11520 0
-}
-
-input "6940:2621:Corsair_CORSAIR_VIRTUOSO_SE_USB_Gaming_Headset_Consumer_Control" {
-    events disabled
-}
-
-input "6940:2621:Corsair_CORSAIR_VIRTUOSO_SE_USB_Gaming_Headset" {
-    events disabled
-}
-
-default_border none
-=======
->>>>>>> 21d018a (Make sway config same across spacenut and flax. switch from subl to nvim.)
 
 # Middle spacenut 30" display
 output "Apple Computer Inc Cinema HD CY7040X1UG1" {
