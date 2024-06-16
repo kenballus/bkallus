@@ -5,6 +5,4 @@ xmodmap -e 'clear Lock'
 xmodmap -e 'keycode 0x42=Escape'
 xmodmap -e 'keysym Menu = Super_R'
 
-
 exec dbus-launch dwm
-
