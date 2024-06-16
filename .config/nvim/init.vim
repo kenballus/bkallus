@@ -4,3 +4,4 @@ set smartindent
 set shiftwidth=4
 set expandtab
 set mouse=
+colorscheme vim
