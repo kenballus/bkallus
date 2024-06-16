@@ -5,17 +5,24 @@ set $down j
 set $up k
 set $right l
 
-set $term    alacritty
-set $menu    bemenu-run --line-height 24
-set $browser librewolf
-set $editor  subl -n
+output * {
+    bg ~/.background.jpg fill
+}
 
-output * bg ~/.background.jpg fill
+# MacBook display
+output "Unknown Unknown Unknown" {
+    scale 1.5
+}
 
+<<<<<<< HEAD
+=======
+# Left spacenut 30" display
+>>>>>>> 21d018a (Make sway config same across spacenut and flax. switch from subl to nvim.)
 output "Apple Computer Inc Cinema HD CY8340Q0XMP" {
     mode 2560x1600@59.860Hz
     pos 0 0
 }
+<<<<<<< HEAD
 
 output "Apple Computer Inc Cinema HD CY7040X1UG1" {
     mode 2560x1600@59.860Hz
@@ -51,11 +58,50 @@ input "6940:2621:Corsair_CORSAIR_VIRTUOSO_SE_USB_Gaming_Headset" {
 }
 
 default_border none
+=======
+>>>>>>> 21d018a (Make sway config same across spacenut and flax. switch from subl to nvim.)
 
-exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+# Middle spacenut 30" display
+output "Apple Computer Inc Cinema HD CY7040X1UG1" {
+    mode 2560x1600@59.860Hz
+    pos 2560 0
+}
+
+# Right spacenut 30" display
+output "Apple Computer Inc Cinema HD CY915042XMP" {
+    mode 2560x1600@59.860Hz
+    pos 5120 0
+}
+
+# Left spacenut 24" display
+output "CYPRESS SEMICONDUCTOR CORPORATION CP-1261HS 0x00000001" {
+    mode 1920x1200@59.950Hz
+    pos 7680 0
+}
+
+# Middle spacenut 24" display
+output "Apple Computer Inc Apple Cinema  0x02000306" {
+    mode 1920x1200@59.649Hz
+    pos 9600 0
+}
+
+# Right spacenut 24" display
+output "Apple Computer Inc Apple Cinema  0x02000301" {
+    mode 1920x1200@59.649Hz
+    pos 11520 0
+}
+
+input "6940:2621:Corsair_CORSAIR_VIRTUOSO_SE_USB_Gaming_Headset_Consumer_Control" {
+    events disabled
+}
+
+input "6940:2621:Corsair_CORSAIR_VIRTUOSO_SE_USB_Gaming_Headset" {
+    events disabled
+}
+
+input "type:touchpad" {
+    natural_scroll disabled
+}
 
 input "type:keyboard" {
     xkb_options caps:escape,altwin:menu_win,altwin:prtsc_rwin
@@ -67,10 +113,19 @@ input "1386:772:Wacom_Cintiq_13HD_Pen" {
     map_to_output "Unknown Cintiq 13HD 3JAH001871"
 }
 
-bindsym $mod+Shift+Return exec $term
-bindsym $mod+Shift+s      exec $editor
-bindsym $mod+Shift+w      exec $browser
-bindsym $mod+p            exec $menu
+default_border none
+
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000'
+
+
+
+bindsym $mod+Shift+Return exec alacritty
+bindsym $mod+Shift+s      exec alacritty -e nvim
+bindsym $mod+Shift+w      exec librewolf || firefox
+bindsym $mod+p            exec bemenu-run --line-height 24
 
 bindsym XF86AudioRaiseVolume  exec "pactl set-sink-volume @DEFAULT_SINK@ +5%"
 bindsym XF86AudioLowerVolume  exec "pactl set-sink-volume @DEFAULT_SINK@ -5%"
