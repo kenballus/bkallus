@@ -42,11 +42,11 @@ export QT_AUTO_SCREEN_SCALE_FACTOR="0"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Defaults
-export SHELL="zsh"
-export EDITOR="nvim"
-export PAGER="less"
+export SHELL="/usr/bin/zsh"
+export EDITOR="/usr/bin/nvim"
+export PAGER="/usr/bin/less"
 export LESSHISTFILE="/dev/null"
-export BROWSER="librewolf"
+export BROWSER="$(which librewolf 2>/dev/null || which firefox 2>/dev/null)"
 
 # Wayland
 export MOZ_ENABLE_WAYLAND="1"
@@ -66,11 +66,14 @@ case ":$PATH:" in
 esac
 
 # Zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null \
+    || /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null \
+    || /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 # Misc
-export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
+export DEBUGINFOD_URLS="$({ stat /etc/arch-release &>/dev/null && printf "%s" "https://debuginfod.archlinux.org" } \
+                       || { stat /etc/fedora-release &>/dev/null && printf "%s" "https://debuginfod.fedoraproject.org" })"
 
 # For execing without leaving behind a terminal window
 o() {
