@@ -56,6 +56,7 @@ export CLUTTER_BACKEND="wayland"
 export XDG_CURRENT_DESKTOP="sway"
 export XDG_SESSION_TYPE="wayland"
 export GDK_BACKEND="wayland"
+export ELECTRON_OZONE_PLATFORM_HINT="auto"
 
 # Misc
 export XDG_CONFIG_HOME="$HOME/.config"
