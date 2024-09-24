@@ -84,6 +84,7 @@ exec swayidle -w \
 bindsym $mod+Shift+Return exec alacritty
 bindsym $mod+Shift+s      exec alacritty -e nvim
 bindsym $mod+Shift+w      exec librewolf || firefox
+bindsym $mod+Shift+p      exec swaylock -f -c 000000
 bindsym $mod+p            exec bemenu-run --line-height 24
 
 bindsym XF86AudioRaiseVolume  exec "pactl set-sink-volume @DEFAULT_SINK@ +5%"
