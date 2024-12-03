@@ -24,7 +24,7 @@ alias mkdir='mkdir -p -v'
 alias rmdir='rmdir -p --ignore-fail-on-non-empty'
 alias ip='ip -h -c=always' # Not compatible with busybox
 
-alias objdump='objdump --visualize-jumps=extended-color --disassembler-color=extended -Mintel'
+alias objdump='objdump -F --visualize-jumps=extended-color --disassembler-color=extended -Mintel'
 alias ssh='TERM=xterm-256color ssh'
 alias nmcli='nmcli --pretty'
 alias rg='rg --no-ignore'
