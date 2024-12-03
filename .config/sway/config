@@ -79,11 +79,9 @@ exec swayidle -w \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 000000'
 
-
-
 bindsym $mod+Shift+Return exec alacritty
 bindsym $mod+Shift+s      exec alacritty -e nvim
-bindsym $mod+Shift+w      exec librewolf || firefox
+bindsym $mod+Shift+w      exec librewolf || firefox 2>/dev/null
 bindsym $mod+Shift+p      exec swaylock -f -c 000000
 bindsym $mod+p            exec bemenu-run --line-height 24
 
