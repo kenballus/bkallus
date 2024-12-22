@@ -55,7 +55,7 @@ export CLUTTER_BACKEND="wayland"
 export XDG_CURRENT_DESKTOP="sway"
 export XDG_SESSION_TYPE="wayland"
 export GDK_BACKEND="wayland"
-export ELECTRON_OZONE_PLATFORM_HINT="auto"
+export ELECTRON_OZONE_PLATFORM_HINT="wayland"
 
 # Misc
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -69,7 +69,10 @@ esac
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null || source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null || source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
-# Misc
+# Rust
+source "$HOME/.cargo/env"
+
+# Debuginfod
 export DEBUGINFOD_URLS="$({ stat /etc/arch-release &>/dev/null && printf "%s" "https://debuginfod.archlinux.org" } \
                        || { stat /etc/fedora-release &>/dev/null && printf "%s" "https://debuginfod.fedoraproject.org" })"
 
@@ -78,6 +81,12 @@ o() {
     "$@" &
     disown
     exit
+}
+
+retry() {
+    while true; do
+        "$@" && break;
+    done
 }
 
 # For activating python venvs
