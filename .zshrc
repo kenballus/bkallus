@@ -87,6 +87,8 @@ retry() {
 }
 
 # For activating python venvs
-activate() {
-    source "$@/bin/activate"
+venv() {
+    [ -z "$1" ] && VENVNAME=venv || VENVNAME="$1"
+    python3 -m venv "$VENVNAME"
+    source "$VENVNAME/bin/activate"
 }
