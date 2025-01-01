@@ -70,8 +70,9 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null || source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
 # Debuginfod
-export DEBUGINFOD_URLS="$({ stat /etc/arch-release &>/dev/null && printf "%s" "https://debuginfod.archlinux.org" } \
-                       || { stat /etc/fedora-release &>/dev/null && printf "%s" "https://debuginfod.fedoraproject.org" })"
+export DEBUGINFOD_URLS="$({ stat /etc/arch-release &>/dev/null && printf '%s' 'https://debuginfod.archlinux.org' } \
+                       || { stat /etc/fedora-release &>/dev/null && printf '%s' 'https://debuginfod.fedoraproject.org' } \
+                       || { stat /etc/debian_version &>/dev/null && printf '%s' 'https://debuginfod.debian.net' })"
 
 # For execing without leaving behind a terminal window
 o() {
