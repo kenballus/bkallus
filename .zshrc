@@ -84,12 +84,13 @@ o() {
 retry() {
     while true; do
         "$@" && break;
+        echo "Retrying..."
     done
 }
 
 # For activating python venvs
 venv() {
     [ -z "$1" ] && VENVNAME=venv || VENVNAME="$1"
-    python3 -m venv "$VENVNAME"
+    [ -d "$VENVNAME" ] || python3 -m venv "$VENVNAME"
     source "$VENVNAME/bin/activate"
 }
