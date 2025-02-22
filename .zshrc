@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=1000000
+SAVEHIST=1000000
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename "/home/${USER}/.zshrc"
@@ -85,12 +85,13 @@ o() {
 retry() {
     while true; do
         "$@" && break;
+        echo "Retrying..."
     done
 }
 
 # For activating python venvs
 venv() {
     [ -z "$1" ] && VENVNAME=venv || VENVNAME="$1"
-    python3 -m venv "$VENVNAME"
+    [ -d "$VENVNAME" ] || python3 -m venv "$VENVNAME"
     source "$VENVNAME/bin/activate"
 }
