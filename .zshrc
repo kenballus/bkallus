@@ -13,6 +13,7 @@ compinit
 autoload -Uz colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}%b "
 
+bindkey -e
 bindkey "\e[H"  beginning-of-line
 bindkey "\e[F"  end-of-line
 bindkey "\e[3~" delete-char
@@ -55,7 +56,7 @@ export CLUTTER_BACKEND="wayland"
 export XDG_CURRENT_DESKTOP="sway"
 export XDG_SESSION_TYPE="wayland"
 export GDK_BACKEND="wayland"
-export ELECTRON_OZONE_PLATFORM_HINT="wayland"
+export ELECTRON_OZONE_PLATFORM_HINT="auto"
 
 # Misc
 export XDG_CONFIG_HOME="$HOME/.config"
