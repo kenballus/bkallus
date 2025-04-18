@@ -94,4 +94,5 @@ venv() {
     [ -z "$1" ] && VENVNAME=venv || VENVNAME="$1"
     [ -d "$VENVNAME" ] || python3 -m venv "$VENVNAME"
     source "$VENVNAME/bin/activate"
+    rehash
 }
