@@ -34,7 +34,8 @@ alias less='less -R'
 alias vim='nvim'
 alias vi='nvim'
 alias more='less -R'
-alias sudo='doas'
+alias sudo='run0'
+alias doas='run0'
 
 # Theming
 export GTK_THEME="Adwaita:dark"
