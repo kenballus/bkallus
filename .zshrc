@@ -34,8 +34,7 @@ alias less='less -R'
 alias vim='nvim'
 alias vi='nvim'
 alias more='less -R'
-alias sudo='run0'
-alias doas='run0'
+alias sudo="$(/usr/bin/which run0 2>/dev/null || /usr/bin/which doas 2>/dev/null || /usr/bin/which sudo 2>/dev/null)"
 
 # Theming
 export GTK_THEME="Adwaita:dark"
