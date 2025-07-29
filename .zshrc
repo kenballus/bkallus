@@ -25,7 +25,7 @@ alias mkdir='mkdir -p -v'
 alias rmdir='rmdir -p --ignore-fail-on-non-empty'
 alias ip='ip -h -c=always' # Not compatible with busybox
 
-alias objdump='objdump -F --visualize-jumps=extended-color --disassembler-color=extended -Mintel'
+alias objdump='objdump --reloc --dynamic-reloc -F --visualize-jumps=extended-color --disassembler-color=extended -Mintel'
 alias ssh='TERM=xterm-256color ssh'
 alias nmcli='nmcli --pretty'
 alias rg='rg --no-ignore'
@@ -34,7 +34,7 @@ alias less='less -R'
 alias vim='nvim'
 alias vi='nvim'
 alias more='less -R'
-alias sudo="$(/usr/bin/which run0 2>/dev/null || /usr/bin/which doas 2>/dev/null || /usr/bin/which sudo 2>/dev/null)"
+alias sudo="$(/usr/bin/which doas 2>/dev/null || /usr/bin/which sudo 2>/dev/null || /usr/bin/which run0 2>/dev/null)"
 
 # Theming
 export GTK_THEME="Adwaita:dark"
