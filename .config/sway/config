@@ -9,11 +9,6 @@ output * {
     bg ~/.background.jpg fill
 }
 
-# MacBook display
-output "Unknown Unknown Unknown" {
-    scale 1.5
-}
-
 # Left spacenut 30" display
 output "Apple Computer Inc Cinema HD CY8340Q0XMP" {
     mode 2560x1600@59.860Hz
@@ -32,30 +27,16 @@ output "Apple Computer Inc Cinema HD CY915042XMP" {
     pos 5120 0
 }
 
-# Left spacenut 24" display
-output "CYPRESS SEMICONDUCTOR CORPORATION CP-1261HS 0x00000001" {
-    mode 1920x1200@59.950Hz
-    pos 7680 0
+# Small Wacom
+output "Wacom Tech Cintiq 13HD 3JAH001871" {
+    mode 1920x1080@60.000Hz
+    pos 2560,1600
+    transform 90
 }
 
-# Middle spacenut 24" display
-output "Apple Computer Inc Apple Cinema  0x02000306" {
-    mode 1920x1200@59.649Hz
-    pos 9600 0
-}
-
-# Right spacenut 24" display
-output "Apple Computer Inc Apple Cinema  0x02000301" {
-    mode 1920x1200@59.649Hz
-    pos 11520 0
-}
-
-input "6940:2621:Corsair_CORSAIR_VIRTUOSO_SE_USB_Gaming_Headset_Consumer_Control" {
-    events disabled
-}
-
-input "6940:2621:Corsair_CORSAIR_VIRTUOSO_SE_USB_Gaming_Headset" {
-    events disabled
+# Small Wacom
+input "1386:772:Wacom_Cintiq_13HD_Pen" {
+    map_to_output "Wacom Tech Cintiq 13HD 3JAH001871"
 }
 
 input "type:touchpad" {
@@ -68,19 +49,12 @@ input "type:keyboard" {
     repeat_rate 75
 }
 
-input "1386:772:Wacom_Cintiq_13HD_Pen" {
-    map_to_output "Unknown Cintiq 13HD 3JAH001871"
-}
-
 default_border none
 
-exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+exec swayidle -w timeout 300 'swaylock -f -c 000000'
 
 bindsym $mod+Shift+Return exec alacritty
-bindsym $mod+Shift+s      exec alacritty -e nvim
+bindsym $mod+Shift+s      exec slurp | grim -g -
 bindsym $mod+Shift+w      exec librewolf || firefox 2>/dev/null
 bindsym $mod+Shift+p      exec swaylock -f -c 000000
 bindsym $mod+p            exec bemenu-run --line-height 24
