@@ -49,6 +49,11 @@ input "type:keyboard" {
     repeat_rate 75
 }
 
+input "1255:32:Elo_TouchSystems,_Inc._Elo_TouchSystems_2700_IntelliTouch(r)_USB_Touchmonitor_Interface" {
+    calibration_matrix "-1.004431" "0.002964" "1.004043" "0.005266" "-1.005263" "0.999981"
+    map_to_output 'Elo TouchSystems Inc 0x3239 0x00004F06'
+}
+
 default_border none
 
 exec swayidle -w timeout 300 'swaylock -f -c 000000'
