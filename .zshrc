@@ -42,7 +42,6 @@ export QT_AUTO_SCREEN_SCALE_FACTOR="0"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Defaults
-export SHELL="/usr/bin/zsh"
 export EDITOR="/usr/bin/nvim"
 export PAGER="/usr/bin/less"
 export LESSHISTFILE="/dev/null"

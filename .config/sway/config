@@ -10,7 +10,7 @@ output * {
 }
 
 # Left spacenut 30" display
-output "Apple Computer Inc Cinema HD CY8340Q0XMP" {
+output "Apple Computer Inc Cinema HD CY7491UWXMP" {
     mode 2560x1600@59.860Hz
     pos 0 0
 }
@@ -56,11 +56,14 @@ input "1255:32:Elo_TouchSystems,_Inc._Elo_TouchSystems_2700_IntelliTouch(r)_USB_
 
 default_border none
 
-exec swayidle -w timeout 300 'swaylock -f -c 000000'
+exec swayidle -w \
+    timeout 600 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f -c 000000'
 
 bindsym $mod+Shift+Return exec alacritty
 bindsym $mod+Shift+s      exec slurp | grim -g -
-bindsym $mod+Shift+w      exec librewolf || firefox 2>/dev/null
+bindsym $mod+Shift+w      exec "$BROWSER"
 bindsym $mod+Shift+p      exec swaylock -f -c 000000
 bindsym $mod+p            exec bemenu-run --line-height 24
 
