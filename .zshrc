@@ -34,7 +34,9 @@ alias less='less -R'
 alias vim='nvim'
 alias vi='nvim'
 alias more='less -R'
-alias sudo="$(/usr/bin/which doas 2>/dev/null || /usr/bin/which sudo 2>/dev/null || /usr/bin/which run0 2>/dev/null)"
+_SUDO="$(/usr/bin/which doas 2>/dev/null || /usr/bin/which sudo 2>/dev/null || /usr/bin/which run0 2>/dev/null)"
+alias sudo="$_SUDO"
+unset _SUDO
 
 # Theming
 export GTK_THEME="Adwaita:dark"
@@ -45,7 +47,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export EDITOR="/usr/bin/nvim"
 export PAGER="/usr/bin/less"
 export LESSHISTFILE="/dev/null"
-export BROWSER="$(which librewolf 2>/dev/null || which firefox 2>/dev/null)"
+export BROWSER=librewolf
 
 # Wayland
 export MOZ_ENABLE_WAYLAND="1"
