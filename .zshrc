@@ -46,7 +46,6 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 # Defaults
 export EDITOR="/usr/bin/nvim"
 export PAGER="/usr/bin/less"
-export LESSHISTFILE="/dev/null"
 export BROWSER=librewolf
 
 # Wayland
@@ -61,6 +60,8 @@ export ELECTRON_OZONE_PLATFORM_HINT="auto"
 
 # Misc
 export XDG_CONFIG_HOME="$HOME/.config"
+export LESSHISTFILE='/dev/null'
+export GDBHISTFILE="$HOME/.local/state/gdb/history"
 
 case ":$PATH:" in
   *:$HOME/.local/bin:*);;
